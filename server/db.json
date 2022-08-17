@@ -1,0 +1,123 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "Qual a capital de Santa Catarina?",
+      "options": [
+        {
+          "id": 1,
+          "option": "Florianópolis",
+          "answer": true
+        },
+        {
+          "id": 2,
+          "option": "Joinville",
+          "answer": false
+        },
+        {
+          "id": 3,
+          "option": "Curitiba",
+          "answer": false
+        },
+        {
+          "id": 4,
+          "option": "São José",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Qual a capital de São Paulo?",
+      "options": [
+        {
+          "id": 1,
+          "option": "São Paulo",
+          "answer": true
+        },
+        {
+          "id": 2,
+          "option": "São Bernardo dos Campo",
+          "answer": false
+        },
+        {
+          "id": 3,
+          "option": "Santo André",
+          "answer": false
+        },
+        {
+          "id": 4,
+          "option": "Campos do Jordão",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Qual a capital do Paraná?",
+      "options": [
+        {
+          "id": 1,
+          "option": "Florianópolis",
+          "answer": false
+        },
+        {
+          "id": 2,
+          "option": "Maringá",
+          "answer": false
+        },
+        {
+          "id": 3,
+          "option": "Curitiba",
+          "answer": true
+        },
+        {
+          "id": 4,
+          "option": "Bituruna",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Qual a capital do Ceará?",
+      "options": [
+        {
+          "id": 1,
+          "option": "Fortaleza",
+          "answer": true
+        },
+        {
+          "id": 2,
+          "option": "Jeriquaquara",
+          "answer": false
+        },
+        {
+          "id": 3,
+          "option": "Campos Sales",
+          "answer": false
+        },
+        {
+          "id": 4,
+          "option": "Araricá",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "question": null,
+      "id": 5
+    },
+    {
+      "question": null,
+      "id": 6
+    }
+  ],
+  "gamers": [
+    {
+      "id": 1,
+      "name": "Maryucha",
+      "points": 1
+    }
+  ]
+}

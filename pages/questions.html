@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/styles.css">
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="../js/script.js" defer></script>
+        <title>Quiz/Perguntas</title>
+    </head>
+    <body>
+        <div class="container-fluid p-5 bg-primary text-white text-center mb-5">
+            <h1>Cadastre suas perguntas</h1>
+            <p>Vamos testar seus amigos?</p>
+        </div>
+        <section class="conatiner-sm p-5">
+            <form class="row g-3">
+                <div class="row g-2">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control"
+                            id="question" placeholder="Digite sua
+                            pergunta">
+                        <label for="question">Pergunta</label>
+                    </div>
+                    <div class="col-md">
+                        <div class="form-floating">
+                            <input type="text" class="form-control"
+                                id="option1" placeholder="Digite uma
+                                opção de resposta">
+                            <label for="option1">Opção</label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-floating">
+                            <select class="form-select" id="answer1"
+                                aria-label="Floating label select example">
+                                <option selected>Escolha</option>
+                                <option value="true">Certa</option>
+                                <option value="false">Errada</option>
+                            </select>
+                            <label for="answer1">Resposta
+                                certa?</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-2">
+                    <div class="col-md">
+                        <div class="form-floating">
+                            <input type="text" class="form-control"
+                                id="option2" placeholder="Digite uma
+                                opção de resposta">
+                            <label for="option2">Opção</label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-floating">
+                            <select class="form-select" id="answer2"
+                                aria-label="Floating label select example">
+                                <option selected>Escolha</option>
+                                <option value="true">Certa</option>
+                                <option value="false">Errada</option>
+                            </select>
+                            <label for="answer2">Essa é a resposta
+                                certa?</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-2">
+                    <div class="col-md">
+                        <div class="form-floating">
+                            <input type="text" class="form-control"
+                                id="option3" placeholder="Digite uma
+                                opção de resposta">
+                            <label for="option3">Opção</label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-floating">
+                            <select class="form-select" id="answer3"
+                                aria-label="Floating label select example">
+                                <option selected>Escolha</option>
+                                <option value="true">Certa</option>
+                                <option value="false">Errada</option>
+                            </select>
+                            <label for="answer3">Essa é a resposta
+                                certa?</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-2">
+                    <div class="col-md">
+                        <div class="form-floating">
+                            <input type="text" class="form-control"
+                                id="option4" placeholder="Digite uma
+                                opção de resposta">
+                            <label for="option4">Opção</label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-floating">
+                            <select class="form-select" id="answer4"
+                                aria-label="Floating label select example">
+                                <option selected>Escolha</option>
+                                <option value="true">Certa</option>
+                                <option value="false">Errada</option>
+                            </select>
+                            <label for="answer4">Essa é a resposta
+                                certa?</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-success mb-3">
+                        <i class="fa fa-save"></i>
+                        Salvar</button>
+                </div>
+            </form>
+            <a href="./index.html" class="btn btn-primary float-end ms-5">Voltar</a>
+        </section>
+
+
+    </body>
+</html>
