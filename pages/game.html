@@ -12,7 +12,7 @@
             crossorigin="anonymous">
         <link rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <script src="../js/script.js" defer></script>
+        <script src="../js/game.js" defer></script>
         <title>Quiz/Game</title>
     </head>
     <body>
@@ -24,30 +24,28 @@
         <section class="conatiner-sm p-5">
             <div class="d-flex flex-row justify-content-end">
                 <h4 class="palyer mx-1 text-warning">Player: <span
-                        class="text-dark mx-1">Maryucha /</span></h4>
-                <h4 class="text-info">Points: <span class="points text-warning">10</span></h4>
+                        class="text-dark mx-1" id="name"> /</span></h4>
+                <h4 class="text-info">Points: <span class="points text-warning" id="points"> /</span></h4>
             </div>
             <div class="progress mb-3">
                 <div class="progress-bar progress-bar-striped bg-info w-75"
-                    role="progressbar" aria-valuenow="75" aria-valuemin="0"
-                    aria-valuemax="100"></div>
+                    role="progressbar" aria-valuenow="" aria-valuemin=""
+                    aria-valuemax="" id="progress"></div>
             </div>
 
             <div class="card mb-5">
-                <div class="card-header bg-primary text-white">
-                    Neque porro quisquam est qui dolorem ipsum quia dolor sit
-                    amet, consectetur, adipisci velit...
+                <div class="card-header bg-primary text-white" id="question">
                 </div>
                 <div class="card-body">
                     <div class="list-group mb-5">
                         <a class="list-group-item list-group-item-action"
-                            aria-current="">The current link item</a>
+                            aria-current="" id="option1"></a>
                         <a class="list-group-item list-group-item-action"
-                            aria-current="">A second link item</a>
+                            aria-current="" id="option2"></a>
                         <a class="list-group-item list-group-item-action"
-                            aria-current="">A third link item</a>
+                            aria-current="" id="option3"></a>
                         <a class="list-group-item list-group-item-action"
-                            aria-current="">A fourth link item</a>
+                            aria-current="" id="option4"></a>
                     </div>
                 </div>
             </div>
