@@ -1,21 +1,22 @@
-window.addEventListener('DOMContentLoaded', () => renderQuestion());
-
-window.addEventListener('DOMContentLoaded', () => renderUser());
-
 window.addEventListener('DOMContentLoaded', () => game());
+window.addEventListener('DOMContentLoaded', () => renderQuestion());
+window.addEventListener('DOMContentLoaded', () => renderUser());
+window.addEventListener('DOMContentLoaded', () => validateAnswer());
+window.addEventListener('DOMContentLoaded', () => findQuestion());
 
-
+// #region game
 /* GAME - PAGE*/
-const name = document.getElementById('name');
+const nameUser = document.getElementById('name');
 const points = document.getElementById('points');
 const question = document.getElementById('question');
 const option1 = document.getElementById('option1');
 const option2 = document.getElementById('option2');
 const option3 = document.getElementById('option3');
 const option4 = document.getElementById('option4');
+//#endregion game
 
 
-
+// #region question
 /* QUESTION - PAGE*/
 const form = document.getElementById('form');
 const newQuestion = document.getElementById('question');
@@ -28,23 +29,56 @@ const newOption2 = document.getElementById('option2');
 const newOption3 = document.getElementById('option3');
 const newOption4 = document.getElementById('option4');
 
+//#endregion question
+
+// #region foi
+
 /** PROGRESS - PAGE*/
 const progress = document.getElementById('progress');
+progress.ariaValueMax = 10;
+progress.ariaValueMin = 0;
+progress.ariaValueNow = 1;
+
+//endregion foi
 
 /**
  * Listar as perguntas
  */
 const renderQuestion = async () => {
-  let uri = 'http://localhost:3000/questions/1';
-  const res = await fetch(uri);
-  const questions = await res.json();
-  console.log('Questions', questions);
+  const questionFind = await findQuestion();
+  const questionNow = JSON.stringify(questionFind);
+  const teste = JSON.parse(questionNow);
 
-  question.innerHTML = questions.question;
-  option1.innerHTML = questions.options[0].option;
-  option2.innerHTML = questions.options[1].option;
-  option3.innerHTML = questions.options[2].option;
-  option4.innerHTML = questions.options[3].option;
+    tempQuestion = {
+      question: teste.question,
+      options: [
+          {
+              option: teste.options[0].option,
+              answer: teste.options[0].answer
+          },
+          {
+              option: teste.options[1].option,
+              answer: teste.options[1].answer
+          },
+          {
+              option: teste.options[2].option,
+              answer: teste.options[2].answer
+          },
+          {
+              option: teste.options[3].option,
+              answer: teste.options[3].answer
+          },
+      ],
+  }
+
+    question.innerHTML = tempQuestion.question;
+    option1.innerHTML = tempQuestion.options[0].option;
+    option2.innerHTML = tempQuestion.options[1].option;
+    option3.innerHTML = tempQuestion.options[2].option;
+    option4.innerHTML = tempQuestion.options[3].option;
+
+
+
 }
 
 
@@ -57,29 +91,52 @@ const renderUser = async () => {
   const user = await res.json();
 
   
-  name.innerHTML = user.name;
+  nameUser.innerHTML = user.name;
   points.innerHTML = user.points;
 
-  console.log('user', user);
 }
 
 /**
  * carregando spinner
  */
 const game = async () => {
-  let uri = 'http://localhost:3000/questions';
+  let currentQuestion = progress.ariaValueNow;
+  let uri = `http://localhost:3000/questions`;
+  let i = 10;
   const res = await fetch(uri);
   const questions = await res.json();
-  const status = questions.length;
+  const status = questions.length * 10;
 
-  progress.innerHTML = 10 - status;
-  progress.ariaValueNow = status;
-  progress.ariaValueMax = 100;
-  progress.ariaValueMin = 0;
+ 
 
-  console.log('progress', progress);
+  progress.innerHTML = (10 - status) ? status : `${status}%` ;
+  progress.style.width = `${status}%`;
+
 }
 
-const validateAnswer = async () => {
 
+
+/**
+ * validando a pergunta
+ */
+const validateAnswer = async () => {
+  let uri = 'http://localhost:3000/questions/';
+  const res = await fetch(uri);
+  const questions = await res.json();
+
+
+  const answer = questions.find(x => x.options[0].answer === true);
+  //console.log('answer', answer);
+}
+
+/**
+ * 
+ * @returns 
+ */
+const findQuestion = async () => {
+  let currentQuestion = progress.ariaValueNow;
+  let uri = `http://localhost:3000/questions/${currentQuestion}`;
+  const res = await fetch(uri);
+  const question = await res.json();
+  return question;
 }
